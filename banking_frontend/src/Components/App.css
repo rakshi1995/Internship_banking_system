@@ -1,0 +1,45 @@
+* {
+ 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+
+.App{
+  background-color:rgba(112, 38, 231, 0.5);
+  position:relative;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.page-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  position: relative;
+  z-index: 2;
+}
+
+.page-heading h1 {
+  font-size: 5rem;
+  color: rgb(92, 17, 17);
+  font-weight: 300;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0px 20px;
+  border-radius: 2px;
+}
+
+
+
+
+@media screen and (max-width:992px) {
+  .page-heading h1 {
+    font-size: 3rem;
+  }
+}
