@@ -3,6 +3,8 @@ import { Col, Container, Row, Button } from "react-bootstrap";
 import Select from "react-select";
 import { Input } from "reactstrap";
 import axios from "axios";
+import {base_url} from '../../development.json'
+
 
 const Transfer = (props) => {
   const [users, setUsers] = useState([]);
@@ -13,7 +15,7 @@ const Transfer = (props) => {
   useEffect(() => {
     const getapiCalls = async () => {
       try {
-        const apiUrl = "http://localhost:4000/customer/get-customers";
+        const apiUrl = `${base_url}/customer/get-customers`;
         const viewCustomers = await axios.get(apiUrl);
         console.log(viewCustomers.data.customers);
         const customerOptions = viewCustomers.data.customers.map((customer) => {
@@ -41,7 +43,7 @@ const Transfer = (props) => {
     const transaction_amount = amount;
     try {
       const response = await axios.post(
-        "http://localhost:4000/transactions/transfer",
+        `${base_url}/transactions/transfer`,
         {
           from_account,
           to_account,

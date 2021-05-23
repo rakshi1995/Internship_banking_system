@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Button, Container, Table } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import {base_url} from '../../development.json'
 
 const List = () => {
   const [customers, setapiCalls] = useState([]);
@@ -13,7 +14,7 @@ const List = () => {
 
   const getapiCalls = async () => {
     try {
-      const apiUrl = "http://localhost:4000/customer/get-customers";
+      const apiUrl = `${base_url}/customer/get-customers`;
       const viewCustomers = await axios.get(apiUrl);
       console.log(viewCustomers.data.customers);
       if (viewCustomers && viewCustomers.data)

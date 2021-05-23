@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Table } from "react-bootstrap";
 import axios from "axios";
+import {base_url} from '../../development.json'
 
 
 function TransactionHistory() {
@@ -12,7 +13,7 @@ function TransactionHistory() {
 
   const getapiCalls = async () => {
     try {
-      const apiUrl = "http://localhost:4000/transactions/transac-history";
+      const apiUrl = `${base_url}/transactions/transac-history`;
       const transactions = await axios.get(apiUrl);
       setapiCalls(transactions.data.transactions);
     } catch (error) {
